@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>PhoneGap</title>
+<script type="text/javascript" charset="utf-8" src="phonegap-0.9.3.js"></script>
+<script type="text/javascript" charset="utf-8" src="talkative.js"></script>
+
+
+<script type="text/javascript" charset="utf-8">
+
+ document.addEventListener('deviceready', function() {
+ 		window.plugins.talkative.init(function() {}, function() {});
+ 
+      	var btn = document.getElementById("play-sound");
+	    btn.onclick = function() {
+	    
+	    	window.plugins.talkative.speak("hello",
+			    function(r){},
+			    function(e){log(e)}
+		    );
+	    }
+	    btn.disabled=false;
+ }, true);
+ 
+</script>		
+</head>
+<body >
+    <input disabled id="play-sound" type="button" value="Play sound"  />
+
+    
+</body>
+</html>
